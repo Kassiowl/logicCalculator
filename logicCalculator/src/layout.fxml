@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.PerspectiveTransform?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="506.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logicCalculatorController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ParallelCamera layoutX="280.0" layoutY="151.0" />
+            <Button fx:id="propositionOne" layoutY="67.0" mnemonicParsing="false" onAction="#propositionOneEvent" prefHeight="60.0" prefWidth="64.0" text="P" textOverrun="CLIP">
+               <font>
+                  <Font name="Verdana Italic" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="operatorOne" contentDisplay="RIGHT" layoutX="92.0" layoutY="245.0" mnemonicParsing="false" onAction="#operatorOneEvent" prefHeight="60.0" prefWidth="83.0" text="-&gt;">
+               <font>
+                  <Font name="Nirmala UI Semilight" size="30.0" />
+               </font>        
+               <textFill>
+                  <LinearGradient endY="1.0" startX="1.0" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Lighting diffuseConstant="1.64" specularConstant="1.47" specularExponent="40.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4985380172729492" green="0.8684210777282715" blue="0.8560916185379028" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="propositionTwo" layoutX="73.0" layoutY="67.0" mnemonicParsing="false" onAction="#propositionTwoEvent" prefHeight="60.0" prefWidth="64.0" text="Q" textOverrun="CLIP">
+               <font>
+                  <Font name="Verdana Italic" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="propositionThree" layoutX="148.0" layoutY="67.0" mnemonicParsing="false" onAction="#propositionThreeEvent" prefHeight="60.0" prefWidth="64.0" text="N" textOverrun="CLIP">
+               <font>
+                  <Font name="Verdana Italic" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="propositionFour" layoutX="227.0" layoutY="67.0" mnemonicParsing="false" onAction="#propositionFourEvent" prefHeight="60.0" prefWidth="64.0" text="D" textOverrun="CLIP">
+               <font>
+                  <Font name="Verdana Italic" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="operatorTwo" contentDisplay="RIGHT" layoutX="186.0" layoutY="245.0" mnemonicParsing="false" onAction="#operatorTwoEvent" prefHeight="60.0" prefWidth="83.0" text="^">
+               <font>
+                  <Font name="Nirmala UI Semilight" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endY="1.0" startX="1.0" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Lighting diffuseConstant="1.64" specularConstant="1.47" specularExponent="40.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4985380172729492" green="0.8684210777282715" blue="0.8560916185379028" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="operatorThree" contentDisplay="RIGHT" layoutX="279.0" layoutY="245.0" mnemonicParsing="false" onAction="#operatorThreeEvent" prefHeight="60.0" prefWidth="83.0" text="v">
+               <font>
+                  <Font name="Nirmala UI Semilight" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endY="1.0" startX="1.0" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Lighting diffuseConstant="1.64" specularConstant="1.47" specularExponent="40.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4985380172729492" green="0.8684210777282715" blue="0.8560916185379028" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="operatorFour" contentDisplay="RIGHT" layoutY="245.0" mnemonicParsing="false" onAction="#negateEvent" prefHeight="60.0" prefWidth="83.0" text="¬">
+               <font>
+                  <Font name="Nirmala UI Semilight" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endY="1.0" startX="1.0" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Lighting diffuseConstant="1.64" specularConstant="1.47" specularExponent="40.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4985380172729492" green="0.8684210777282715" blue="0.8560916185379028" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="tButton" layoutX="6.0" layoutY="163.0" mnemonicParsing="false" onAction="#tButtonEvent" prefHeight="30.0" prefWidth="51.0" text="TRUE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.11478777229785919" green="1.0" blue="0.029999999329447746" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="fButton" layoutX="73.0" layoutY="163.0" mnemonicParsing="false" onAction="#fButtonEvent" prefHeight="30.0" prefWidth="51.0" text="FALSE">
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="rButton" layoutX="6.0" layoutY="461.0" mnemonicParsing="false" onAction="#resetEvent" prefHeight="39.0" prefWidth="92.0" text="RESET">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="rButton1" layoutX="210.0" layoutY="159.0" mnemonicParsing="false" onAction="#finishEvent" prefHeight="39.0" prefWidth="83.0" text="FINISH">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Accordion layoutX="444.0" layoutY="298.0" />
+            <Text fx:id="prop1" layoutX="419.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="38.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="op1" layoutX="454.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="51.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="prop2" layoutX="491.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="51.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="op2" layoutX="561.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="38.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="prop3" layoutX="596.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="op3" layoutX="618.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="51.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="prop4" layoutX="643.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="410.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(" wrappingWidth="17.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="533.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text=")" wrappingWidth="17.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="propValue" layoutX="491.0" layoutY="205.0" prefHeight="65.0" prefWidth="92.0">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+      </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <Blend>
+               <topInput>
+                  <PerspectiveTransform />
+               </topInput>
+            </Blend>
+         </effect>
+    </AnchorPane>
+  </children>
+</VBox>
